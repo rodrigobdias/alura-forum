@@ -6,19 +6,13 @@ import java.util.stream.Collectors;
 
 import br.com.learning.aluraforum.modelo.Topico;
 
-//@RequiredArgsConstructor public class TopicoDto {
-	public class TopicoDto {	
-	
-//	@Getter private Long id;
-//	@Getter private String titulo;
-//	@Getter private String mensagem;
-//	@Getter private LocalDateTime dataCriacao;
-	
+public class TopicoDto {
+
 	private Long id;
 	private String titulo;
 	private String mensagem;
 	private LocalDateTime dataCriacao;
-		
+
 	public TopicoDto(Topico topico) {
 		this.id = topico.getId();
 		this.titulo = topico.getTitulo();
@@ -40,9 +34,9 @@ import br.com.learning.aluraforum.modelo.Topico;
 
 	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
-	}	
-	
+	}
+
 	public static List<TopicoDto> converter(List<Topico> topicos) {
 		return topicos.stream().map(TopicoDto::new).collect(Collectors.toList());
-	}	
+	}
 }
