@@ -27,8 +27,7 @@ public class TopicosController {
 	
 	@Autowired
 	private CursoRepository cursoRepository;
-	
-	@RequestMapping("/topicos")
+
 	@GetMapping
 	public List<TopicoDto> lista(String nomeCurso) {
 		
