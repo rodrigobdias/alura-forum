@@ -2,11 +2,20 @@ package br.com.learning.aluraforum.repository;
 
 import br.com.learning.aluraforum.modelo.Curso;
 import br.com.learning.aluraforum.modelo.Topico;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class TopicoForm {
-	
+
+	@NotNull @NotEmpty @Length(min = 5)
 	private String titulo;
+
+	@NotNull @NotEmpty @Length(min = 10)
 	private String mensagem;
+
+	@NotNull @NotEmpty
 	private String nomeCurso;
 	
 	public String getTitulo() {

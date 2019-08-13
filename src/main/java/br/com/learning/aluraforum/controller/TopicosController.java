@@ -18,6 +18,8 @@ import br.com.learning.aluraforum.repository.CursoRepository;
 import br.com.learning.aluraforum.repository.TopicoForm;
 import br.com.learning.aluraforum.repository.TopicoRepository;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/topicos")
 public class TopicosController {
@@ -43,7 +45,7 @@ public class TopicosController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<TopicoDto> cadastrar(@RequestBody TopicoForm form, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<TopicoDto> cadastrar(@RequestBody @Valid TopicoForm form, UriComponentsBuilder uriBuilder) {
 		
 		Topico topico = form.converter(cursoRepository);
 		
